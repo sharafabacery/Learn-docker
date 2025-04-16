@@ -1,8 +1,13 @@
 version: '3'
 services: # what is your container do you have
   node-app: # first container
+    build:  #build this container file docker 
+      context: .
+      args:
+        - NODE_ENV=DEV
     volumes:
       - ./src:/app/src:ro
     environment:
       - PORT=4000
       - NODE_ENV=DEV
+    command: npm run start 

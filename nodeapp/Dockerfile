@@ -4,7 +4,13 @@ WORKDIR /app
 
 COPY package.json . 
 
-RUN npm install
+ARG NODE_ENV
+
+RUN if ["$NODE_ENV" = "PRODUCTION"];\
+    then npm install --only=production;\
+    else npm install;\
+    fi
+#RUN npm install
 
 COPY . .
 
