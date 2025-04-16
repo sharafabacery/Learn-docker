@@ -1,0 +1,6 @@
+version: '3'
+services: # what is your container do you have
+  node-app: # first container
+    environment:
+      - PORT=4000
+      - NODE_ENV=PRODUCTION
