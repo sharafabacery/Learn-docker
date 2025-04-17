@@ -1,7 +1,23 @@
 const express =require("express")
-
+const mongoose = require("mongoose")
 const PORT=process.env.PORT|| 4000
 const app=express()
+
+
+const USER_NAME='root'
+const PASSWORD='example'
+const DB_PORT=27017
+const DB_HOST ="mongo"
+const DB_URI=`mongodb://${USER_NAME}:${PASSWORD}@${DB_HOST}:${DB_PORT}`
+mongoose.connect(DB_URI).then(
+()=>{
+    console.log("connected")
+}
+
+).catch((err)=>{
+console.log(err)
+});
+
 app.use(express.json());
 app.get('/api/test', (req, res) => {
     // Print the request body

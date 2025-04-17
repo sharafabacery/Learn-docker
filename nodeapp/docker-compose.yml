@@ -4,3 +4,9 @@ services: # what is your container do you have
     container_name: simple-node
     ports:
       - "4000:4000"
+  mongo:
+    image: mongo
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: example
