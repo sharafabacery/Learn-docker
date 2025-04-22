@@ -1,8 +1,18 @@
-const express =require("express")
-const mongoose = require("mongoose")
+import express from 'express'
+import mongoose from 'mongoose'
+import { createClient } from 'redis'
+
 const PORT=process.env.PORT|| 4000
 const app=express()
 
+const REDIS_PORT=6379
+const REDIS_HOST="redis"
+
+const client = await createClient({
+    url: `redis://${REDIS_HOST}:${REDIS_PORT}`
+})
+  .on('error', err => console.log('Redis Client Error', err))
+  .connect();
 
 const USER_NAME='root'
 const PASSWORD='example'
