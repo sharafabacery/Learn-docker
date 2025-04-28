@@ -38,14 +38,14 @@ services: # what is your container do you have
 #      - mongo
   redis:
     image: redis
-  nginx:
-    image: nginx:stable-alpine
-    volumes:
-      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
-    ports:
-      - "8080:80"
-    depends_on:
-      - node-app
+#  nginx:
+#    image: nginx:stable-alpine
+#    volumes:
+#      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+#    ports:
+#      - "8080:80"
+#    depends_on:
+#      - node-app
 
 volumes:
   mongo-db:
