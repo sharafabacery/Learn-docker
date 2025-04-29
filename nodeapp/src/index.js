@@ -45,6 +45,12 @@ console.log(err)
 });
 
 app.use(express.json());
+app.get("/",(req,res)=>{
+    const responseMessage = {
+        message: 'GET request received! to root',
+    };
+    res.json(responseMessage);
+})
 app.get('/api/test', (req, res) => {
     // Print the request body
     console.log('Request Body:', req.body);
