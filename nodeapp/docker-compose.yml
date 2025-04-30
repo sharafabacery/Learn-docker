@@ -1,10 +1,7 @@
 version: '3'
 services: # what is your container do you have
   node-app: # first container
-    container_name: simple-node
     image: sharafabacery/learn-docker-nodejs
-    ports:
-      - "4000:4000"
     depends_on:
     #  - postgres
       - mongo

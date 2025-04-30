@@ -1,3 +1,4 @@
+import os from 'os'
 import express from 'express'
 import mongoose from 'mongoose'
 import { createClient } from 'redis'
@@ -46,6 +47,7 @@ console.log(err)
 
 app.use(express.json());
 app.get("/",(req,res)=>{
+    console.log("traffic from "+os.hostname)
     const responseMessage = {
         message: 'GET request received! to root',
     };

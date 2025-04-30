@@ -7,6 +7,5 @@ services: # what is your container do you have
     volumes:
       - ./src:/app/src:ro
     environment:
-      - PORT=4000
       - NODE_ENV=DEV
     command: npm run start 
